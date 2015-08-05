@@ -1,0 +1,4 @@
+class LayoutsController < ApplicationController
+
+
+end
