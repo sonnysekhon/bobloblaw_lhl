@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805194720) do
+ActiveRecord::Schema.define(version: 20150805194721) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "business_id"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20150805194720) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "addresses", ["business_id"], name: "index_addresses_on_business_id"
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,6 +40,8 @@ ActiveRecord::Schema.define(version: 20150805194720) do
     t.datetime "updated_at"
   end
 
+  add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
+
   create_table "layouts", force: :cascade do |t|
     t.integer  "business_id"
     t.string   "template"
@@ -47,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150805194720) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "layouts", ["business_id"], name: "index_layouts_on_business_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "firstname"
