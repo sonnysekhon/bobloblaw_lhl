@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805194721) do
+ActiveRecord::Schema.define(version: 20150806182954) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "business_id"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20150805194721) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "photo"
-    t.string   "type",            default: "customer"
+    t.string   "user_type",       default: "customer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
