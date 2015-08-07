@@ -11,21 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806182954) do
-
-  create_table "addresses", force: :cascade do |t|
-    t.integer  "business_id"
-    t.string   "street_number"
-    t.string   "unit_number"
-    t.string   "street_name"
-    t.string   "city"
-    t.string   "province"
-    t.string   "country"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "addresses", ["business_id"], name: "index_addresses_on_business_id"
+ActiveRecord::Schema.define(version: 20150807203841) do
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,6 +24,12 @@ ActiveRecord::Schema.define(version: 20150806182954) do
     t.boolean  "featured"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "website"
+    t.string   "address"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "province"
+    t.string   "country"
   end
 
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"

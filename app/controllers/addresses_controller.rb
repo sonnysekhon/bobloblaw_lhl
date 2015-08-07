@@ -1,4 +1,0 @@
-class AddressesController < ApplicationController
-
-
-end
