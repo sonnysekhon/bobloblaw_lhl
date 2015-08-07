@@ -18,5 +18,5 @@ doc.css(".listingInfo").each do |item|
   if !item.css("div a img").empty?
     image = item.css("div a img").attr('src')
   end
-  puts "#{name} - #{phone} - #{street_address}, #{city}, #{province}, #{postal_code}, #{website}, #{image}}"
+  puts "#{name} - #{phone} - #{street_address}, #{city}, #{province}, #{postal_code}, #{website}, #{image}"
 end
