@@ -1,0 +1,14 @@
+<h1>Gyms In Vancouver!</h1>
+<%= link_to "Create a new gym!", new_business_path %>
+<hr>
+<% @businesses.each do |business| %>
+  <% if business.photo %>
+    <%= link_to image_tag(business.photo), business_path(business) %>
+  <% else %>
+    <div class="no_image" style="width:140px;height:70px;background-color:#303030;"><%= link_to image_tag('default.png'), business_path(business) %></div>
+  <% end %>
+  <h2><%= link_to business.name, business.website %></h2>
+  <h3><%= business.address %>, <%= business.city %>, <%= business.province %>, <%= business.postal_code %></h3>
+  <h4><%= business.phone %></h4>
+  <hr>
+<% end %>
