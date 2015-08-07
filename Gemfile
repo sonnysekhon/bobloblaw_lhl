@@ -27,6 +27,7 @@ gem "pry"
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'kaminari'
+gem 'nokogiri'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
