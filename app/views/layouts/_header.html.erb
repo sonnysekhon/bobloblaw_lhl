@@ -1,0 +1,13 @@
+<header>
+  <small>
+    <% if current_user %>
+      <% if current_user.user_type == "superuser" %>
+        Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>) (<%= link_to "Admin User Management", admin_users_path %>)
+      <% else %>
+        Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+      <% end %>
+    <% else %>
+      <%= link_to "Log in", login_path %> | <%= link_to "Register", register_path %>
+    <% end %>
+  </small>
+</header>

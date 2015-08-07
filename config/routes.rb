@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  
+  #get 'login', :to => 'session#new'
+  #get 'register', to => 'users#new' 
+  resources :users, only: [:create, :update, :show]
+  resources :session, only: [:create, :destroy, :update]
+
+  resources :businesses, only: [:index, :new, :create, :update, :destroy] do
+    resource :layout, only: [:new, :create, :update]
+  end
+
+  namespace :admin do
+    resources :users
+  end
+  get 'login', to: 'session#new', as: :login
+  get 'register', to: 'users#new', as: :register
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
