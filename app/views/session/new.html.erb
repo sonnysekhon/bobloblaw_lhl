@@ -1,4 +1,7 @@
 <h2>log in</h2>
+<% if current_user %>
+  <p>already logged in</p>
+<% else %>
 <%= form_tag session_index_path do %>
   <div>
     <%= label_tag "email" %><br/>
@@ -9,4 +12,5 @@
     <%= password_field_tag :password %>
   </div>
   <div><%= submit_tag "Log in" %></div>
+<% end %>
 <% end %>

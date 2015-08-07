@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   #get 'login', :to => 'session#new'
   #get 'register', to => 'users#new' 
   resources :users, only: [:create]
-  resources :session, only: [:create, :destroy]
-
+  resources :session, only: [:create, :destroy, :update]
+  namespace :admin do
+    resources :users
+  end
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
   
