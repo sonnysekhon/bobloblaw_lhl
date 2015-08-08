@@ -1,4 +1,0 @@
-class DesignController < ApplicationController
-
-
-end
