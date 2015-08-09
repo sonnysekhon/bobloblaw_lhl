@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807203841) do
+ActiveRecord::Schema.define(version: 20150808000341) do
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "user_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150807203841) do
     t.string   "email"
     t.string   "photo"
     t.text     "description"
-    t.boolean  "featured"
+    t.boolean  "featured",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "website"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150807203841) do
 
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
 
-  create_table "layouts", force: :cascade do |t|
+  create_table "designs", force: :cascade do |t|
     t.integer  "business_id"
     t.string   "template"
     t.string   "main_color"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150807203841) do
     t.datetime "updated_at"
   end
 
-  add_index "layouts", ["business_id"], name: "index_layouts_on_business_id"
+  add_index "designs", ["business_id"], name: "index_designs_on_business_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "firstname"
