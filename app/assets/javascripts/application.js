@@ -11,6 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){               
+  $('.materialboxed').materialbox();
+});
+$(document).ready(function(){
+  $('.materialboxed').materialbox();
+});

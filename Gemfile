@@ -28,6 +28,7 @@ gem "pry"
 gem 'bcrypt'
 gem 'kaminari'
 gem 'nokogiri'
+gem 'materialize-sass'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
