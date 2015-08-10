@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'welcome/index'
+
   #get 'login', :to => 'session#new'
   #get 'register', to => 'users#new' 
   resources :users, only: [:create, :update, :show]
@@ -13,8 +15,11 @@ Rails.application.routes.draw do
     resources :users
   end
   
+  get 'home', to: 'welcome#index', as: :home
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
+
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
