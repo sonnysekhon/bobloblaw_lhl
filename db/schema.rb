@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150808000341) do
+ActiveRecord::Schema.define(version: 20150810213246) do
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,9 +19,8 @@ ActiveRecord::Schema.define(version: 20150808000341) do
     t.string   "name"
     t.string   "phone"
     t.string   "email"
-    t.string   "photo"
     t.text     "description"
-    t.boolean  "featured",    default: false
+    t.boolean  "featured",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "website"
@@ -30,6 +29,10 @@ ActiveRecord::Schema.define(version: 20150808000341) do
     t.string   "postal_code"
     t.string   "province"
     t.string   "country"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
