@@ -1,13 +1,36 @@
 <header>
-  <small>
-    <% if current_user %>
-      <% if current_user.user_type == "superuser" %>
-        Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>) (<%= link_to "Admin User Management", admin_users_path %>)
-      <% else %>
-        Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
-      <% end %>
+<nav>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m3">
+        <a href="/" class="logo">
+        <img src="/img/logo.png">
+        </a>
+      </div>
+      <div class="col s12 m9">
+        <div class="right">
+          <ul>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/team">Our Team</a></li>
+            <li><a href="http://docs.closeheatapp.com" target="_blank">Docs</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="http://app.closeheat.com/users/sign_in">Log In</a></li>
+            <li><a href="http://app.closeheat.com/users/sign_up" class="btn sign-up">Sign Up Free</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<small>
+  <% if current_user %>
+    <% if current_user.user_type == "superuser" %>
+      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>) (<%= link_to "Admin User Management", admin_users_path %>)
     <% else %>
-      <%= link_to "Log in", login_path %> | <%= link_to "Register", register_path %>
+      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
     <% end %>
-  </small>
+  <% else %>
+    <%= link_to "Log in", login_path %> | <%= link_to "Register", register_path %>
+  <% end %>
+</small>
 </header>
