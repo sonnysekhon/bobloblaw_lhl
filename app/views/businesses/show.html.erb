@@ -1,7 +1,11 @@
 <div class="container about">
   <h5><%=@business.name%></h5>
   <h6><%= @business.city %>, <%= @business.province %></h6>
-  <h6><%= link_to 'Claim business', edit_business_path %></h6>
+  <% if current_user %>
+    <h6><%= link_to 'Claim business', edit_business_path %></h6>
+  <% else %>
+    <h6><%= link_to 'Sign-in to Claim business', login_path  %></h6>
+  <% end %>
   <hr>
   
   <div class="row">

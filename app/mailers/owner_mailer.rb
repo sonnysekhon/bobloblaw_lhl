@@ -1,7 +1,6 @@
 class OwnerMailer < ApplicationMailer
 
   def claim_business_email(user_id, name, email, business_name, business_address, business_phone, comments)
-    # binding.pry
     @id = user_id
     @name = name
     @email = email
