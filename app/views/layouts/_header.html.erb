@@ -3,19 +3,17 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m3">
-        <a href="/" class="logo">
-        <img src="/img/logo.png">
-        </a>
+        <h4><a href="/" class="logo">
+        <!-- <img src="/img/logo.png"> -->
+          Almanak
+        </a></h4>
       </div>
       <div class="col s12 m9">
         <div class="right">
           <ul>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/team">Our Team</a></li>
-            <li><a href="http://docs.closeheatapp.com" target="_blank">Docs</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="http://app.closeheat.com/users/sign_in">Log In</a></li>
-            <li><a href="http://app.closeheat.com/users/sign_up" class="btn sign-up">Sign Up Free</a></li>
+            <li><a href="/login">Log In</a></li>
+            <li><%= link_to 'Twitter', '/auth/twitter' %></li>
+            <li><a href="/register">Sign Up</a></li>
           </ul>
         </div>
       </div>
