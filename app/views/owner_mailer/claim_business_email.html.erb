@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>You have received the following email from <%= "#{ @name } (#{ @email }):" %></p>
+        <p>They want to claim <%= @business_name %>.</p>
+        <p>Location: <%= @business_address %></p>
+        <p>Phone: <%= @business_phone %></p>
+        </br>
+        </br>
+        <p>Comments: <%= @comments %></p>
+        <p> User ID: <%= @id %></p>
+    </body>
+</html>

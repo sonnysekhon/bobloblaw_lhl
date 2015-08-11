@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+  helper BusinessHelper
 
   def new
     @business = Business.new
@@ -20,6 +21,24 @@ class BusinessesController < ApplicationController
 
   def show
     @business = Business.find(params[:id])
+  end
+
+  def format_id(string)
+    string.match(/\d/)
+  end
+
+  def claim_business
+    user_id = format_id("#{params[:user_id]}")
+    name = params[:name]
+    email = params[:email]
+    business_name = params[:business_name]
+    business_address = params[:business_address]
+    business_phone = params[:business_phone]
+    comments = params[:comments]
+
+    OwnerMailer.claim_business_email(user_id, name, email, business_name, business_address, business_phone, comments).deliver
+    flash[:notice] = "Business claim request has been sent."
+    redirect_to '/'
   end
 
   protected
