@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :update, :show]
   resources :session, only: [:create, :destroy, :update]
 
-  resources :businesses, only: [:index, :new, :create, :update, :destroy, :show] do
+  resources :businesses, only: [:index, :new, :create, :update, :edit, :destroy, :show] do
     resource :design, only: [:new, :create, :update]
   end
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'home', to: 'welcome#index', as: :home
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
-  get :owner_mailer, to: 'businesses#claim_business', as: :owner_mailer
+  match '/claim_business', to: 'businesses#claim_business', via: 'post'
 
   root 'welcome#index'
 
