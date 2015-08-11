@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :session, only: [:create, :destroy, :update]
 
   resources :businesses, only: [:index, :new, :create, :update, :edit, :destroy, :show] do
-    resource :design, only: [:new, :create, :update]
+    resource :design, only: [:new, :create, :update, :show]
   end
 
   namespace :admin do
