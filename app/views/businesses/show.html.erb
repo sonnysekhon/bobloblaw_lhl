@@ -1,7 +1,7 @@
 <div class="container about">
   <h5><%=@business.name%></h5>
   <h6><%= @business.city %>, <%= @business.province %></h6>
-  <h6>claim business</h6>
+  <h6><%= link_to 'Claim business', owner_mailer_path, class: "big-button" %></h6>
   <hr>
   
   <div class="row">

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'home', to: 'welcome#index', as: :home
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
+  get :owner_mailer, to: 'businesses#claim_business', as: :owner_mailer
 
   root 'welcome#index'
 
