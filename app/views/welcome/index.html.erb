@@ -6,6 +6,10 @@
       <div class="row center">
         <h5 class="header col s12 light white-text">BobLobLawbobLobLaw</h5>
       </div>
+      <%= form_tag(businesses_path, method: "get") do %>
+        <%= text_field_tag(:search) %>
+      <% end %>
+
       <div class="row center">
         <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1  hoverable">Get Started</a>
       </div>

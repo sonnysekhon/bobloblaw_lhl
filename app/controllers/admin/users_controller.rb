@@ -32,6 +32,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @business.user_id = @user.id
     if @user.update_attributes(user_params)
       redirect_to admin_users_path
     else
