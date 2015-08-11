@@ -31,7 +31,7 @@
   </div>
   <div>
     <%= f.label "user_type", "User Type" %><br>
-    <%= f.select(:user_type,["customer", "owner", "superuser"]) %><br>
+    <%= f.select(:user_type,["customer", "owner", "superuser"], {}, {:class => 'browser-default'}) %><br>
   </div>
   <div><%= f.submit "Submit" %></div>
 <% end %>

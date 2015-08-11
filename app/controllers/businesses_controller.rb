@@ -16,6 +16,10 @@ class BusinessesController < ApplicationController
 
   def index
     @businesses = Business.all
+
+    if params[:search]
+      @businesses = @businesses.check_query(params[:search])
+    end
   end
 
   def show
