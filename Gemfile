@@ -29,6 +29,7 @@ gem 'bcrypt'
 gem 'kaminari'
 gem 'nokogiri'
 gem 'materialize-sass'
+gem 'paperclip'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

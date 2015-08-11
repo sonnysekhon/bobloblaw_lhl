@@ -13,7 +13,7 @@
     </div>
     <div class="col s12 m4 l4">
       <h6 class="blue-grey-text text-darken-1"><%=link_to business.name, business_path(business)%></h6>
-      <div class="card blue-grey darken-1">
+      <div class="card blue-grey darken-1 hoverable">
         <div class="card-content white-text">
           <br>
           <% if business.photo %>
@@ -26,7 +26,7 @@
     </div>
     <div class="col s12 m4 l4">
       <h6>Information</h6>
-      <ul class="collapsible">
+      <ul class="collapsible hoverable">
         <li class="active">
           <div class="collapsible-header"><i class="mdi-maps-my-location"></i>Address</div>
           <div class="collapsible-body"><p><%= business.address %>, <%= business.city %>, <%= business.province %>, <%= business.postal_code %></p></div>
