@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :businesses
   end
   
   get 'home', to: 'welcome#index', as: :home
