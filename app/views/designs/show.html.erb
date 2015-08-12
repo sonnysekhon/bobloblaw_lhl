@@ -1,6 +1,6 @@
 <%= render 'navbar' %>
 
-<div class="section" style="margin-left: 5%; margin-right: 5%;">
+<!-- <div class="section" style="margin-left: 5%; margin-right: 5%;">
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
@@ -11,7 +11,14 @@
     </div>
     <div class="parallax"><img src="<%= @business.photo %>" alt="Unsplashed background img 1"></div>
   </div>
-<div>
+<div> -->
+
+<div class="container">
+  <div>
+    <h1 class="header center black-text"><%= @business.name %></h1>
+    <img src="<%= @business.photo %>" class="design-img">
+  </div>
+</div>
 
 <div class="section <%= @design.secondary_color %>" style="height: 5px; padding: 0px">
 </div>
@@ -23,25 +30,27 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col s12 m6 l3">
-    <div class="card <%= @design.main_color %> darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Card Title</span>
-        <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
+<section>
+  <div class="row">
+    <div class="col s12 m6 l3">
+      <div class="card <%= @design.main_color %> darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Card Title</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col s12 m6">
-    <div class="card <%= @design.main_color %> darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Card Title</span>
-        <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card <%= @design.main_color %> darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Card Title</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
