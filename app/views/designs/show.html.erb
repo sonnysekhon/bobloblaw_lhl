@@ -1,0 +1,44 @@
+<%= render 'navbar' %>
+
+<style type="text/css">
+    .row {
+        background-color: <%= @design.main_color %>;
+    }
+</style>
+
+<div class="parallax-container">
+  <div class="parallax"><img src="<%= @business.photo %>"></div>
+</div>
+<div class="section white">
+  <div class="row container">
+    <h2 class="header"></h2>
+    <p class="grey-text text-darken-3 lighten-3"><%= @business.description %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12 m6 l3">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Card Title</span>
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Card Title</span>
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>

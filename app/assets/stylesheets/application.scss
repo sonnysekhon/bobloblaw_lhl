@@ -147,6 +147,7 @@ body, html
 {
     margin-bottom: 30px;
 }
+
 .business_thumbnail
 {
 width: 100px;
@@ -160,7 +161,6 @@ overflow: hidden;
 border-radius: 50%;
 }
 
-
 .parallax-container {
   height: 500px;
 }
@@ -168,10 +168,15 @@ border-radius: 50%;
 .parallax { 
   z-index: 0;
 }
+
 .section.no-pad-bot {
     padding-bottom: 0;
     z-index: 1;
     position: relative;
+}
+
+.box-square {
+    
 }
 
 footer

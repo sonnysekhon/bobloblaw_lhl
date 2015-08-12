@@ -7,9 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/header' %>
-<%= yield %>
-<%= render 'layouts/footer' %>
+<% if @show_navbar %>
+  <%= render 'layouts/header' unless @disable_nav %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+<% else %>
+  <%= yield %>
+<% end %>
 
 </body>
 </html>
