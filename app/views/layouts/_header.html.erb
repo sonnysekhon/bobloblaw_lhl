@@ -8,10 +8,12 @@
           Almanak
         </a></h4>
       </div>
+      <div class="col s12 m3">
       <%= form_tag(businesses_path, method: "get") do %>
         <%= text_field_tag(:search) %>
       <% end %>
-      <div class="col s12 m9">
+      </div>
+      <div class="col s12 m6">
         <div class="right">
           <ul>
             <li><a href="/login">Log In</a></li>
