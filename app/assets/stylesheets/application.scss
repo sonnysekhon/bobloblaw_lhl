@@ -8,6 +8,10 @@ body, html
     background-color: #EDEDED !important;
 }
 
+.right-icons {
+    padding-top: 10px;
+}
+
 .intro
 {
     text-align: center;
@@ -147,17 +151,28 @@ body, html
 {
     margin-bottom: 30px;
 }
-.business_thumbnail
-{
-width: 100px;
-height: 100px;
-position: relative;
-overflow: hidden;
--webkit-border-radius: 50%;
--moz-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-border-radius: 50%;
+.business_thumbnail {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.avatar_thumbnail {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
 }
 
 

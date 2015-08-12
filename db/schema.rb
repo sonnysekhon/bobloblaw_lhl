@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150812000433) do
 
   create_table "businesses", force: :cascade do |t|
@@ -59,6 +60,9 @@ ActiveRecord::Schema.define(version: 20150812000433) do
     t.string   "user_type",       default: "customer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
   end
 
 end
