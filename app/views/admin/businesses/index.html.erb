@@ -1,0 +1,8 @@
+<h1>Admin Business Management Page</h1>
+<%= paginate @businesses %>
+<% @businesses.each do |business| %>
+  <div class = "business">
+  <%= business.name %> | <%= business.website %> | <%= business.email %> | <%= link_to "assign user to a business" , edit_admin_business_path(business) %> 
+
+  </div>
+<% end %>

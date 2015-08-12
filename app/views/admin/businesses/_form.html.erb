@@ -1,0 +1,18 @@
+<%= form_for [:admin,@business] do |f| %>
+  <% if @business.errors.any? %>
+    <div>
+      <%= pluralize(@business.errors.count, "error") %> prevented the business from assigned to user
+      <ul>
+        <% @business.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label "email" %>
+    <%= f.text_field "email" %>
+  </div>
+  
+  <div><%= f.submit "Submit" %></div>
+<% end %>
