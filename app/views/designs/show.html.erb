@@ -1,15 +1,19 @@
 <%= render 'navbar' %>
 
-
-<div id="index-banner" class="parallax-container">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <br><br>
-      <h1 class="header center <%= @design.main_color %>-text text-lighten-2"><%= @business.name %></h1>
-      <br><br>
+<div class="section" style="margin-left: 5%; margin-right: 5%;">
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center black-text"><%= @business.name %></h1>
+        <br><br>
+      </div>
     </div>
+    <div class="parallax"><img src="<%= @business.photo %>" alt="Unsplashed background img 1"></div>
   </div>
-  <div class="parallax"><img src="<%= @business.photo %>" alt="Unsplashed background img 1"></div>
+<div>
+
+<div class="section <%= @design.secondary_color %>" style="height: 5px; padding: 0px">
 </div>
 
 <div class="section <%= @design.accent_color %>">

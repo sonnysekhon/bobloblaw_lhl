@@ -24,6 +24,8 @@ var ready;
 ready = function() {
   $('.materialboxed').materialbox();
   $('.parallax').parallax();
-};
+//   $('.design-bar').css("background-color: blue");
+}
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
