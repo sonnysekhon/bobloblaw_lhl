@@ -19,8 +19,8 @@
       <div class="card blue-grey darken-1 hoverable">
         <div class="card-content white-text">
           <br>
-          <% if @business.photo %>
-            <img class="business_thumbnail" src=<%= @business.photo %>>
+          <% if @business.photo_scraped %>
+            <img class="business_thumbnail" src=<%= @business.photo_scraped %>>
           <% else %>
             <img class="business_thumbnail" <%= image_tag('default.png') %>
           <% end %>
