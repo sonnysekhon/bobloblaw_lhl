@@ -8,6 +8,9 @@
           Almanak
         </a></h4>
       </div>
+      <%= form_tag(businesses_path, method: "get") do %>
+        <%= text_field_tag(:search) %>
+      <% end %>
       <div class="col s12 m9">
         <div class="right">
           <ul>

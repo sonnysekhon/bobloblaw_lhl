@@ -2,7 +2,12 @@
   <h5><%=@business.name%></h5>
   <h6><%= @business.city %>, <%= @business.province %></h6>
   <% if current_user %>
-    <h6><%= link_to 'Claim business', edit_business_path %></h6>
+    <% if current_user.user_type == "owner" %>
+      <h6><%= link_to 'Claim business', edit_business_path %></h6>
+      <h6><%= link_to 'sign up' %></h6>
+    <% else %>
+      <h6><%= link_to 'Claim business', edit_business_path %></h6>
+    <% end %>
   <% else %>
     <h6><%= link_to 'Sign-in to Claim business', login_path  %></h6>
   <% end %>

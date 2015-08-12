@@ -16,7 +16,11 @@ class BusinessesController < ApplicationController
   end
 
   def index
-    @businesses = Business.all
+    if current_user.user_type == "owner"
+      @businesses = Business.where("user_id = ?", current_user.id)
+    else  
+      @businesses = Business.all
+    end
 
     if params[:search]
       @businesses = @businesses.check_query(params[:search])
