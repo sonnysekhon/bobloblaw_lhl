@@ -11,8 +11,8 @@ class DesignsController < ApplicationController
   end
 
   def show
-    @design = Design.find(1)
-    @business = Business.find(@design.business_id)
+    @business = Business.find(params[:business_id])
+    @design = Design.find_by(business_id: @business.id)
   end
 
 end

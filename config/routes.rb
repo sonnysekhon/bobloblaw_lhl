@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
   match '/claim_business', to: 'businesses#claim_business', via: 'post'
+  # match 'businesses/:id/', to: 'design#show', via: 'get'
 
   root 'welcome#index'
 
