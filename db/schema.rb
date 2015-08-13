@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812001751) do
+ActiveRecord::Schema.define(version: 20150813010704) do
 
   create_table "businesses", force: :cascade do |t|
     t.integer  "user_id"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20150812001751) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "photo_scraped"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"

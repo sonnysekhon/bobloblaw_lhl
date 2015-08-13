@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'geocoder'
 
 
 # Use Unicorn as the app server
