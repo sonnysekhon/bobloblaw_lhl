@@ -45,5 +45,7 @@
       </ul>
     </div>
   </div>
- 
+  <div class="container">
+    <%= link_to image_tag("http://maps.google.com/maps/api/staticmap?size=2048x300&sensor=false&zoom=16&markers=#{@business.latitude}%2C#{@business.longitude}", {:class => 'maps-img hoverable z-depth-1'}), @business.gmaps_url, target: '_blank'  %>
+  </div>
 </div>

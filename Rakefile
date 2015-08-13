@@ -25,10 +25,11 @@ task :scraper => :environment do
       website = nil
     end
     if !item.css("div a img").empty?
-      photo_scraped = item.css("div a img").attr('src')
+      photo_scraped = item.css("div a img").attr('src').value
     else
       photo_scraped = nil
     end
+    
     Business.create(name: name, phone: phone, photo_scraped: photo_scraped, website: website, address: address, city: city, province: province, postal_code: postal_code)
   end
 end
