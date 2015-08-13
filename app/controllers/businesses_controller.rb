@@ -16,11 +16,15 @@ class BusinessesController < ApplicationController
   end
 
   def index
-    if current_user.user_type == "owner"
-      @businesses = Business.where("user_id = ?", current_user.id)
-    else  
-      @businesses = Business.all
-    end
+    #if current_user.user_type == "owner"
+      #@businesses = Business.where("user_id = ?", current_user.id)
+    #else  
+      # where featured == true (subselect 3)
+      @list_of_featured = Business.where(featured: 'true')
+      @list_of_featured.order("RAND()").limit(5)
+      @businesses = Business.all # where featured == false
+      #@business_combined = #take above two lists append second to first
+    #end
 
     if params[:search]
       @businesses = @businesses.check_query(params[:search])
