@@ -1,0 +1,32 @@
+<%= form_for @design, :html => {:multipart => true} do |f| %>
+  <% if @design.errors.any? %>
+    <div>
+      <%= pluralize(@design.errors.count, "error") %> prevented this business from being submitted:
+        <ul>
+          <%= @design.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label "main color" %>
+    <%= f.text_field "main_color" %>
+  </div>
+  <div>
+    <%= f.label "secondary color" %>
+    <%= f.text_field "secondary color" %>
+  </div>
+  <div>
+    <%= f.label "accent color" %>
+    <%= f.text_field "accent_color" %>
+  </div>
+  <div>
+    <%= f.label "template" %>
+    <%= f.text_field "template" %>
+  </div>
+  <div><%= f.file_field :photo %></div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
