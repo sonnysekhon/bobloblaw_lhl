@@ -194,10 +194,12 @@ footer
 }
 
 .colorPickerContainer {
-  width: 300px;
-  height: 300px;
-  background-color: #e5f2fb;
-  border: 1px solid;
+  width: 100%px;
+  height: 150px;
+}
+
+.colorPicker {
+    border: 1px solid black;
 }
 
 #clickme {
@@ -206,12 +208,12 @@ footer
 
 .item {
   float: left;
-  margin-left: 2.5%;
-  margin-right: 0px;
-  width: 30%;
-  height: 30%;
+  margin-left: 5%;
+  width: 20%;
+  height: 70px;
   background-color: blue;
-  margin-top: 2.5%
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .clicked-item {

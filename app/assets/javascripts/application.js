@@ -29,9 +29,12 @@ ready = function() {
 $(document).ready(ready);
 $(document).on('page:load', ready);
 
+
+// COLOUR PICKING
 $(function () {
   $('.colorPickerContainer').hide();
   $("#firstColor").on('click', function() {
+  // shows colour swatch for pages
     $('.mainColor').show("slow");
   });
   $("#secondColor").on('click', function() {
@@ -41,8 +44,7 @@ $(function () {
     $('.accentColor').show("slow");
   });
 
-
-
+// mouse actions for closing colour selection DOMs
   $('.colorPickerContainer').on('mouseleave', function() {
     $(this).hide(600);
   })
@@ -57,25 +59,27 @@ $(function () {
     $(this).removeClass('clicked-item')
   });
 
-
+// creates an object called select. Use this to pass colour selection to controller
   var selection = {
 
   };
 
+// pairs the section class to the colour picked. stores them in the selection object
   $('.item').on('click', function(e)
   {
       var x = $(this).css('backgroundColor');
       var hexColor = hexc(x);
       var target = $(this).parent().data('color');
       selection[target] = hexColor;
-      // console.log(hexColor, target);
   })
 
+// on click of the save button the selected colours are sent to the rails controller.
   $('button#save').on('click', function()
   {
       console.log(selection);
   });
 
+// converts the colour clicked from RGBA a hex code.
   function hexc(colorval) {
       var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
       delete(parts[0]);
