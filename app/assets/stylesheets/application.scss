@@ -216,8 +216,12 @@ footer
   margin-bottom: 5px;
 }
 
+.item-hover {
+    box-shadow: 0 0 5px black;
+}
+
 .clicked-item {
-  box-shadow: inset 0 0 10px black;
+  box-shadow: inset 0 0 15px black;
 }
 
 .colorPickerContainer div:nth-child(1) {

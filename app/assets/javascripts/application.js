@@ -49,6 +49,12 @@ $(function () {
     $(this).hide(600);
   })
 
+  $('.item').hover(function() {
+    $(this).addClass('item-hover');
+  }, function() {
+    $(this).removeClass('item-hover');
+  });
+
   $('.item').on('mousedown', function() {
     $(this).addClass('clicked-item')
   });
@@ -56,7 +62,7 @@ $(function () {
     $(this).removeClass('clicked-item')
   });
   $('.item').on('mouseleave', function() {
-    $(this).removeClass('clicked-item')
+    $(this).removeClass('clicked-item ')
   });
 
 // creates an object called select. Use this to pass colour selection to controller
@@ -76,7 +82,14 @@ $(function () {
 // on click of the save button the selected colours are sent to the rails controller.
   $('button#save').on('click', function()
   {
-      console.log(selection);
+    var fullData = {"_method": "PUT", design: selection}
+    $.ajax ({
+      type: "POST",
+      url: "../design",
+      data: fullData,
+      dataType: "json"
+    });
+    console.log(fullData);
   });
 
 // converts the colour clicked from RGBA a hex code.

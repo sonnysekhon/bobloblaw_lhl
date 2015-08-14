@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', :to => 'session#create'
 
+  get '/businesses/:business_id/design/', to: 'designs#create'
+  p '/businesses/:business_id/design/', to: 'designs#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
