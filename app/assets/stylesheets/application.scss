@@ -195,22 +195,23 @@ footer
 
 .colorPickerContainer {
   width: 100%px;
-  height: 150px;
+  height: 145px;
+  margin-top: 5px;
 }
 
-.colorPicker {
-    border: 1px solid black;
-}
-
-#clickme {
-  background-color: red
+.titleContainer {
+  border-radius: 20px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  border: 1px solid #198c8c;
+  background: radial-gradient(#198c8c, teal, #198c8c);
 }
 
 .item {
   float: left;
-  margin-left: 5%;
+  margin-left: 4%;
   width: 20%;
-  height: 70px;
+  height: 60px;
   background-color: blue;
   margin-top: 5px;
   margin-bottom: 5px;

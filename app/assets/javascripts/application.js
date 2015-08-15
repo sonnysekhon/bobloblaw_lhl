@@ -44,6 +44,23 @@ $(function () {
     $('.accentColor').show("slow");
   });
 
+  $(".titleContainer").hover(function() {
+    $(this).addClass('item-hover');
+  }, function() {
+    $(this).removeClass('item-hover');
+  });
+
+  $(".titleContainer").on('mousedown', function() {
+    $(this).addClass('clicked-item')
+  });
+  $(".titleContainer").on('mouseup', function() {
+    $(this).removeClass('clicked-item')
+  });
+  $(".titleContainer").on('mouseleave', function(){
+    $(this).removeClass('clicked-item')
+  });
+
+
 // mouse actions for closing colour selection DOMs
   $('.colorPickerContainer').on('mouseleave', function() {
     $(this).hide(600);

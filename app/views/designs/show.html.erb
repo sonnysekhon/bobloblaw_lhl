@@ -15,27 +15,27 @@
 
 <div class="container design-title">
   <div>
-    <h1 class="header center black-text"><%= @business.name %></h1>
+    <h1 class="header center black-text" style="text-shadow: 0 1px 1px #323232;"><%= @business.name %></h1>
     <img src="<%= @business.photo %>" class="design-img">
   </div>
 </div>
 
-<div class="section <%= @design.secondary_color %>" style="height: 5px; padding: 0px">
+<div class="section " style="background-color: <%= @design.secondary_color %>; height: 5px; padding: 0px">
 </div>
 
-<div class="section <%= @design.accent_color %>">
+<div class="section" style="background-color: <%= @design.accent_color %>;">
   <div class="row container">
     <h2 class="header"></h2>
-    <p class="grey-text center text-darken-3 lighten-3"><%= @business.description %></p>
+    <p class="white-text center"><%= @business.description %></p>
   </div>
 </div>
-<div class="section <%= @design.secondary_color %>" style="height: 5px; padding: 0px">
+<div class="section " style="background-color: <%= @design.secondary_color %>; height: 5px; padding: 0px">
 </div>
 
 <section>
   <div class="row">
     <div class="col s12 m6 l3">
-      <div class="card <%= @design.main_color %> darken-1">
+      <div class="card" style="background-color: <%= @design.main_color %>;">
         <div class="card-content white-text">
           <span class="card-title">Card Title</span>
           <p>I am a very simple card. I am good at containing small bits of information.
@@ -46,7 +46,7 @@
   </div>
   <div class="row">
     <div class="col s12 m6">
-      <div class="card <%= @design.main_color %> darken-1">
+      <div class="card" style="background-color: <%= @design.main_color %>;">
         <div class="card-content white-text">
           <span class="card-title">Card Title</span>
           <p>I am a very simple card. I am good at containing small bits of information.
