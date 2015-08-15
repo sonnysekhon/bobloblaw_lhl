@@ -35,6 +35,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'geocoder'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 # Use Unicorn as the app server
