@@ -37,7 +37,13 @@
         </li>
         <li>
           <div class="collapsible-header"><i class="mdi-av-web"></i>Website</div>
-          <div class="collapsible-body"><p><%= link_to business.name, business.website %></p></div>
+          <div class="collapsible-body">
+            <% if current_user.id == business.user_id %>
+              <p><%= link_to 'Create page', new_business_design_path(:business_id => business.id) %></p>
+            <% else %>
+              <p><%= link_to business.name, business.website %></p>
+            <% end %>
+          </div>
         </li>
       </ul>
     </div>

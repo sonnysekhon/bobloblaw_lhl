@@ -40,7 +40,11 @@
         </li>
         <li>
           <div class="collapsible-header"><i class="mdi-av-web"></i>Website</div>
-          <div class="collapsible-body"><p><%= link_to @business.name, @business.website %></p></div>
+          <% if @business.website == ""%>
+            <div class="collapsible-body"><p><%= link_to 'Create a page', new_business_design_path %></p></div>
+          <% else %>
+            <div class="collapsible-body"><p><%= link_to @business.name, @business.website %></p></div>
+          <% end %>
         </li>
       </ul>
     </div>

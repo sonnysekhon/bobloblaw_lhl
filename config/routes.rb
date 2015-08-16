@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :session, only: [:create, :destroy, :update]
 
   resources :businesses, only: [:index, :new, :create, :update, :edit, :destroy, :show] do
-    resource :design, only: [:new, :create, :update]
+    resource :design, only: [:new, :create, :update, :show]
   end
 
   namespace :admin do
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
   match '/claim_business', to: 'businesses#claim_business', via: 'post'
+  # match 'businesses/:id/', to: 'design#show', via: 'get'
 
   root 'welcome#index'
 
@@ -27,6 +28,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'session#destroy'
 
   resources :charges
+
+  get '/businesses/:business_id/design/', to: 'designs#create'
+  p '/businesses/:business_id/design/', to: 'designs#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,6 +3,7 @@ class SessionController < ApplicationController
   def new
   end
   def create
+
     # user = User.find_by(email: params[:email])
 
     # if user && user.authenticate(params[:password])
@@ -20,7 +21,7 @@ class SessionController < ApplicationController
       flash[:warning] = "There was an error while trying to authenticate you..."
     end
     redirect_to root_path
-
+    
   end
   
   def destroy
