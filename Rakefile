@@ -11,7 +11,8 @@ task :scraper => :environment do
   require 'open-uri'  
   url = "http://www.yellowpages.ca/search/si/1/gym/Vancouver%2C%20BC"
   url_bc = "http://www.yellowpages.ca/search/si/1/gym/%20BC"
-  doc = Nokogiri::HTML(open(url))
+  url_bc_yoga = "http://www.yellowpages.ca/search/si/1/yoga/bc"
+  doc = Nokogiri::HTML(open(url_bc_yoga))
   doc.css(".listingInfo").each do |item|
     name = item.css("div h3 a").text
     phone = item.css("div h4 a span").text

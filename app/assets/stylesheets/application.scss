@@ -2,14 +2,25 @@
 
 @import url(http://fonts.googleapis.com/css?family=Nunito);
 
+.nav-wrapper {
+    position: absolute;
+}
 
 body, html
 {
     background-color: #EDEDED !important;
 }
 
-.right-icons {
+.right-icons li{
     padding-top: 10px;
+}
+
+.right-icons li:hover {
+    opacity: 0.5;
+}
+
+.logo-hover:hover {
+    opacity: 0.5;
 }
 
 .intro
