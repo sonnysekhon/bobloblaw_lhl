@@ -190,7 +190,7 @@ border-radius: 50%;
 
 footer
 {
-    padding-top: 0px;
+  padding-top: 0px;
 }
 
 .colorPickerContainer {
@@ -225,31 +225,78 @@ footer
   box-shadow: inset 0 0 15px black;
 }
 
-.colorPickerContainer div:nth-child(1) {
-  background-color: red;
+.mainColor div:nth-child(1) {
+  background-color: #4e342e;
 }
-.colorPickerContainer div:nth-child(2) {
-  background-color: yellow;
+.mainColor div:nth-child(2) {
+  background-color: #263238;
 }
-.colorPickerContainer div:nth-child(3) {
-  background-color: green;
+.mainColor div:nth-child(3) {
+  background-color: #212121;
 }
-.colorPickerContainer div:nth-child(4) {
-  background-color: purple;
+.mainColor div:nth-child(4) {
+  background-color: #1b5e20;
 }
-.colorPickerContainer div:nth-child(5) {
-  background-color: pink;
+.mainColor div:nth-child(5) {
+  background-color: #4527a0;
 }
-.colorPickerContainer div:nth-child(6) {
-  background-color: silver;
+.mainColor div:nth-child(6) {
+  background-color: #1a237e;
 }
-.colorPickerContainer div:nth-child(7) {
-  background-color: grey;
+.mainColor div:nth-child(7) {
+  background-color: #4a148c;
 }
-.colorPickerContainer div:nth-child(8) {
-  background-color: black;
+.mainColor div:nth-child(8) {
+  background-color: #0d47a1;
 }
-.colorPickerContainer div:nth-child(9) {
-  background-color: white;
+
+.secondaryColor div:nth-child(1) {
+  background-color: #1565c0;
+}
+.secondaryColor div:nth-child(2) {
+  background-color: #7e57c2;
+}
+.secondaryColor div:nth-child(3) {
+  background-color: #c62828;
+}
+.secondaryColor div:nth-child(4) {
+  background-color: #2e7d32;
+}
+.secondaryColor div:nth-child(5) {
+  background-color: #00695c;
+}
+.secondaryColor div:nth-child(6) {
+  background-color: #ff8f00;
+}
+.secondaryColor div:nth-child(7) {
+  background-color: #bf360c;
+}
+.secondaryColor div:nth-child(8) {
+  background-color: #795548;
+}
+
+.accentColor div:nth-child(1) {
+  background-color: #d50000;
+}
+.accentColor div:nth-child(2) {
+  background-color: #2196f3;
+}
+.accentColor div:nth-child(3) {
+  background-color: #4caf50;
+}
+.accentColor div:nth-child(4) {
+  background-color: #cddc39;
+}
+.accentColor div:nth-child(5) {
+  background-color: #ffeb3b;
+}
+.accentColor div:nth-child(6) {
+  background-color: #ff9800;
+}
+.accentColor div:nth-child(7) {
+  background-color: #9e9e9e;
+}
+.accentColor div:nth-child(8) {
+  background-color: #26a69a;
 }
 
