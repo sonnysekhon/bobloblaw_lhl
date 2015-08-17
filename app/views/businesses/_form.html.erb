@@ -1,3 +1,4 @@
+<main>
 <%= form_for @business, :html => {:multipart => true} do |f| %>
   <% if @business.errors.any? %>
     <div>
@@ -58,3 +59,4 @@
     <%= f.submit "Submit" %>
   </div>
 <% end %>
+</main>

@@ -8,7 +8,8 @@ Rails.application.load_tasks
 desc "Scrape And Populate DB"
 task :scraper => :environment do
   require 'nokogiri'
-  require 'open-uri'  
+  require 'open-uri'
+  url_local = File.read('/Users/sonnysekhon/Downloads/yoga_bc.html')  
   url = "http://www.yellowpages.ca/search/si/1/gym/Vancouver%2C%20BC"
   url_bc = "http://www.yellowpages.ca/search/si/1/gym/%20BC"
   url_bc_yoga = "http://www.yellowpages.ca/search/si/1/yoga/bc"
