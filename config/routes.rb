@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #get 'register', to => 'users#new' 
   resources :users, only: [:create, :update, :show]
   resources :session, only: [:create, :destroy, :update]
+  resources :charges
 
   resources :businesses, only: [:index, :new, :create, :update, :edit, :destroy, :show] do
     resource :design, only: [:new, :create, :update, :show]
@@ -16,18 +17,19 @@ Rails.application.routes.draw do
     resources :businesses
   end
   
+  get 'class_register', to: 'businesses#class', as: :signup
+  match '/register_class', to: 'businesses#register_class', via: 'post'
   get 'home', to: 'welcome#index', as: :home
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
   match '/claim_business', to: 'businesses#claim_business', via: 'post'
-  # match 'businesses/:id/', to: 'design#show', via: 'get'
 
   root 'welcome#index'
 
   get '/auth/:provider/callback', :to => 'session#create'
   delete '/logout', to: 'session#destroy'
 
-  resources :charges
+
 
   get '/businesses/:business_id/design/', to: 'designs#create'
   p '/businesses/:business_id/design/', to: 'designs#create'

@@ -28,7 +28,7 @@ class BusinessesController < ApplicationController
   end
 
   def format_id(string)
-    string.match(/\d/)
+    string.match(/\d{1,}/)
   end
 
   def claim_business
@@ -43,6 +43,22 @@ class BusinessesController < ApplicationController
     OwnerMailer.claim_business_email(user_id, name, email, business_name, business_address, business_phone, comments).deliver
     flash[:notice] = "Business claim request has been sent."
     redirect_to '/'
+  end
+
+
+  def register_class
+    businessID = format_id("#{params[:business_id]}")
+    @business = Business.find(businessID[0].to_i)
+    name = params[:name]
+    phone_number = params[:phonenumber]
+    email = params[:email]
+    class_name = params[:class_name]
+    class_date = params[:class_date]
+    comments = params[:comments]
+
+    ClassMailer.class_signup_email(name, phone_number, email, class_name, class_date, comments, @business).deliver
+    flash[:notice] = "Class signup has been sent to the business."
+    redirect_to(:back)
   end
 
   protected
