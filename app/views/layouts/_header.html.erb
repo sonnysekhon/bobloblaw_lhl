@@ -2,12 +2,19 @@
 <nav class="teal lighten-1 navbar-fixed" role="navigation">
   <div class="nav-wrapper container">
     <div class="row">
-      <div class="col s12 m3">
+      <div class="col s12 m1 left">
         <h4><a href="/" class="logo">
           <img class="logo-hover" src="<%= asset_path('book.png') %>">
         </a></h4>
       </div>
-      <div class="col s12 m9">
+      <div class="col sm12 m7 searchBar">
+          <%= form_tag(businesses_path, method: "get") do %> 
+            <%= text_field_tag :search, params[:search], class:"searchText"
+%>
+          <% end %>
+      </div>
+
+      <div class="col s12 m4 right">
         <div id="nav-mobile" class="right">
           <% if current_user %>
             <ul>
@@ -29,3 +36,4 @@
 </nav>
 </header>
 <br>
+
