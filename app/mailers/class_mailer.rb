@@ -4,8 +4,8 @@ class ClassMailer < ApplicationMailer
     @name = name
     @phonenumber = phone_number
     @email = email
-    @className = class_name
-    @classDate = class_date
+    @class_name = class_name
+    @class_date = class_date
     @comments = comments
     @business = business
 
