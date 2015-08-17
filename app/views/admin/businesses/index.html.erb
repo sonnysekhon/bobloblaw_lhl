@@ -1,8 +1,13 @@
-<h1>Admin Business Management Page</h1>
+<main>
+<div class="container">
+<h3>Admin Business Management Page</h3>
+
 <%= paginate @businesses %>
 <% @businesses.each do |business| %>
-  <div class = "business">
-  <%= business.name %> | <%= business.website %> | <%= business.email %> | <%= link_to "assign user to a business" , edit_admin_business_path(business) %> 
-
+  <div class = "business center-align ">
+  <%= business.name %> | <%= business.email %> | <%= link_to "Assign To Business" , edit_admin_business_path(business) %>
   </div>
 <% end %>
+
+</div>
+</main>

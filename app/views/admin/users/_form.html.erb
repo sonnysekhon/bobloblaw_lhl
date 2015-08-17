@@ -1,3 +1,4 @@
+<main>
 <%= form_for [:admin,@user] do |f| %>
   <% if @user.errors.any? %>
     <div>
@@ -35,3 +36,5 @@
   </div>
   <div><%= f.submit "Submit" %></div>
 <% end %>
+
+</main>
