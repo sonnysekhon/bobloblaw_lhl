@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>You have received a class Sign-Up request from <%= "#{ @name }" %></p>
+        <p> They want to sign up for your <%= @class_name %>being held on <%= @class_date %></p>
+        </br>
+        </br>
+        <p> Phone number: <%= @phonenumber %></p>
+        <p> Email: <%= @email %></p>
+        <p> They wanted to say: <%= @comments %></p>
+    </body>
+</html>
