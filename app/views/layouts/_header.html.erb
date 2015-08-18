@@ -17,7 +17,12 @@
         <div id="nav-mobile" class="right">
           <% if current_user %>
             <ul>
-              <li class="avatar-name"><%= current_user.name%> </li>
+            <!-- Twitter and facebook save names differently -->
+            <% if current_user.full_name == " " %>
+              <li class="avatar-name"><%= current_user.name %> </li>
+            <% else %>
+              <li class="avatar-name"><%= current_user.full_name %>
+            <% end %>
               <li class="avatar_thumbnail"><%= image_tag current_user.photo, alt: current_user.name %></li>
               <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
             </ul>

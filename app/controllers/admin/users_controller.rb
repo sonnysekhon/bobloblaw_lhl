@@ -23,7 +23,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def index
-    @users = User.order("lastname").page(params[:page])
+    @users = User.order("last_name").page(params[:page])
   end
 
   def edit
@@ -52,7 +52,7 @@ class Admin::UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:email, :firstname, :lastname, :user_type, :password, :password_confirmation)
+    params.require(:user).permit(:email, :first_name, :last_name, :user_type, :password, :password_confirmation)
   end
 
 
