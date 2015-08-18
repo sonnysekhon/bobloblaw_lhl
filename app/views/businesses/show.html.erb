@@ -4,6 +4,7 @@
   <h6><%= @business.city %>, <%= @business.province %></h6>
   <% if current_user %>
     <% if @business.user_id %>
+      <h6><%= link_to 'Sign up for Class', signup_path(:business => @business.id) %></h6>
       <h6><%= link_to 'Edit Business info', edit_business_path %></h6>
     <% else %>
       <h6><%= link_to 'Claim business', claim_business_business_path %></h6>
