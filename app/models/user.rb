@@ -14,7 +14,10 @@ class User < ActiveRecord::Base
       user = find_or_create_by(uid: auth_hash['uid'], provider: auth_hash['provider'])
       user.name = auth_hash['info']['name']
       user.photo = auth_hash['info']['image']
-      #binding.pry
+      user.first_name = auth_hash['info']['first_name']
+      user.last_name = auth_hash['info']['last_name']
+      user.email = auth_hash['info']['email']
+
       user.save!
       user
     end
