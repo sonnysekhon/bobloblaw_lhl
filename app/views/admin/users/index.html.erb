@@ -5,9 +5,16 @@
     </h3>
     <%= paginate @users %>
     <% @users.each do |user| %>
-      <div class = "user">
-      <%= user.first_name  %> | <%= user.last_name %> | <%= user.email %> | <%= link_to "Edit" , edit_admin_user_path(user) %> | <%= link_to "Delete", admin_user_path(user), method: :delete %> 
-      </div>
+    <% binding.pry %>
+      <% if user.first_name == nil %>
+        <div class = "user">
+          <%= user.name  %> | <%= user.email %> | <%= link_to "Edit" , edit_admin_user_path(user) %> | <%= link_to "Delete", admin_user_path(user), method: :delete %> 
+        </div>
+      <% else %>
+        <div class = "user">
+          <%= user.first_name  %> | <%= user.last_name %> | <%= user.email %> | <%= link_to "Edit" , edit_admin_user_path(user) %> | <%= link_to "Delete", admin_user_path(user), method: :delete %> 
+        </div>
+      <% end %>
     <% end %>
     <br>
     <%= link_to "Create User", new_admin_user_path %>
