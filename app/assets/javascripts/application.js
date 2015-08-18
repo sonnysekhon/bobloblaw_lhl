@@ -123,7 +123,7 @@ $(function () {
 });
 
 $(window).load(function() {
-  $('.searchBar form').val('')
+  $('.searchBar form').reset();
 });
 
 
