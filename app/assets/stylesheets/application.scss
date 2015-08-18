@@ -6,6 +6,10 @@
     position: absolute;
 }
 
+.navbar-fixed {
+  
+}
+
 body, html
 {
     background-color: #EDEDED !important;
@@ -45,21 +49,107 @@ footer
     bottom:0;
     width:100%;
 }
-.pagination {
-    background-color: #2ab6a9; 
+
+.tw-fb-logo {
+  margin-top: 12px;
 }
 
-.right-icons li{
-    padding-top: 0px;
-}
-
-.right-icons li:hover {
+.tw-fb-logo:hover {
     opacity: 0.5;
 }
+
+
 
 .logo-hover:hover {
     opacity: 0.5;
 }
+
+
+.card-business {
+  display:block;
+  margin: 10px 10px 30px 30px;
+  float: left;
+  background-color: #f4f4f4;
+  height: 300px;
+  width: 250px;
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.1);
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.card-business:hover {
+  border: 1px solid #26a69a;
+  background-color: #e0f2f1;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.card-header-business {
+  overflow: hidden;
+  width: 100%;
+  max-height: 200px;
+}
+
+.card-header-business img{
+  width: 100%;
+}
+
+.card-content-business {
+  width: 85%;
+  margin: 35px auto;
+}
+
+.card-content-business h3 {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.card-content-business h4 {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.card-content-business p {
+  color: #727272;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.card-footer-business {
+  border-top: solid 1px #B6B6B6;
+  padding: 5px;
+}
+
+.card-footer-business ul {
+  padding: 0;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.card-footer-business ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 5px;
+}
+
+.card-footer-business ul li i {
+  font-size: 2em;
+  color: #3F51B5;
+}
+
+
+
+.pagination {
+    background-color: #2ab6a9; 
+}
+
+
 
 .intro
 {
