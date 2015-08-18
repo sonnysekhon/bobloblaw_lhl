@@ -122,3 +122,11 @@ $(function () {
 
 });
 
+$(window).load(function() {
+  $('.searchBar form').val('')
+});
+
+
+
+
+
