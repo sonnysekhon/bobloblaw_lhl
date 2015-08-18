@@ -4,49 +4,18 @@
   <h6>British Columbia</h6>
   <hr>
   <% @businesses.each do |business| %>
-  <div class="row">
-    <div class="col s12 m4 l4">
-      <h6>Description</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="col s12 m4 l4">
-      <h6 class="blue-grey-text text-darken-1"><%=link_to business.name, business_path(business)%></h6>
-      <div class="card blue-grey darken-1 hoverable">
-        <div class="card-content white-text">
-          <br>
-          <% if business.photo_scraped %>
-            <img class="business_thumbnail" src=<%= business.photo_scraped %>>
-          <% else %>
-            <img class="business_thumbnail" <%= image_tag('default.png') %>
-          <% end %>
-        </div>
+    <div class="card-business hoverable">
+      <div class="card-header-business">
+        <% if business.photo_scraped %>
+          <img src=<%= business.photo_scraped %>>
+        <% else %>
+          <%= image_tag('default.png') %>
+        <% end %>
+      </div>
+      <div class="card-content-business">
+        <h3 class="flow-text center-align"><%=link_to business.name, business_path(business), :class => "teal-text text-lighten-1"%></h3>
       </div>
     </div>
-    <div class="col s12 m4 l4">
-      <h6>Information</h6>
-      <ul class="collapsible hoverable">
-        <li class="active">
-          <div class="collapsible-header"><i class="mdi-maps-my-location"></i>Address</div>
-          <div class="collapsible-body"><p><%= business.address %>, <%= business.city %>, <%= business.province %>, <%= business.postal_code %></p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="mdi-communication-phone"></i>Phone</div>
-          <div class="collapsible-body"><p><%= business.phone %></p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="mdi-av-web"></i>Website</div>
-          <div class="collapsible-body">
-            <% if current_user.id == business.user_id %>
-              <p><%= link_to 'Create page', new_business_design_path(:business_id => business.id) %></p>
-            <% else %>
-              <p><%= link_to business.name, business.website %></p>
-            <% end %>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <% end %>
+  <% end %> 
 </div>
 </main>
