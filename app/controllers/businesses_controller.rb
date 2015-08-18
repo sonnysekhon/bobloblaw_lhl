@@ -55,8 +55,6 @@ class BusinessesController < ApplicationController
     class_name = params[:class_name]
     class_date = params[:class_date]
     comments = params[:comments]
-
-    binding.pry
     
     ClassMailer.class_signup_email(name, phone_number, email, class_name, class_date, comments, @business).deliver
     flash[:notice] = "Class signup has been sent to the business."
