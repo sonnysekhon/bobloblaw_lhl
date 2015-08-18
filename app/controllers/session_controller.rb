@@ -14,7 +14,9 @@ class SessionController < ApplicationController
     # end
     # render text: request.env['omniauth.auth'].to_yaml
     begin
+      # data = request.env['omniauth.auth'].extra.raw_info
       @user = User.from_omniauth(request.env['omniauth.auth'])
+      # binding.pry
       session[:user_id] = @user.id
       flash[:success] = "Welcome, #{@user.name}!"
     rescue

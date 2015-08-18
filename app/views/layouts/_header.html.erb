@@ -7,10 +7,9 @@
           <img class="logo-hover" src="<%= asset_path('book.png') %>">
         </a></h4>
       </div>
-      <div class="col sm12 m7 searchBar">
+      <div class="col sm12 m5 searchBar">
           <%= form_tag(businesses_path, method: "get") do %> 
-            <%= text_field_tag :search, params[:search], class:"searchText"
-%>
+            <%= text_field_tag :search, params[:search], class:"searchText"%>
           <% end %>
       </div>
 
@@ -32,6 +31,11 @@
           <% end %>
         </div>
       </div>
+      <% if current_user && current_user.user_type == "superuser" %>
+        <div class="col s12 m2">
+          <%= link_to 'Admin', admin_users_path %>
+        </div>
+      <% end %>
     </div>
   </div>
 </nav>
