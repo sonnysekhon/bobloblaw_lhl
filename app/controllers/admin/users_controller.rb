@@ -23,7 +23,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def index
-    @users = User.order("lastname").page(params[:page])
+    @users = User.order("last_name").page(params[:page])
   end
 
   def edit
