@@ -16,6 +16,30 @@
         <h3 class="flow-text center-align"><%=link_to business.name, business_path(business), :class => "teal-text text-lighten-1"%></h3>
       </div>
     </div>
-  <% end %> 
+    <div class="col s12 m4 l4">
+      <h6>Information</h6>
+      <ul class="collapsible hoverable">
+        <li class="active">
+          <div class="collapsible-header"><i class="mdi-maps-my-location"></i>Address</div>
+          <div class="collapsible-body"><p><%= business.address %>, <%= business.city %>, <%= business.province %>, <%= business.postal_code %></p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="mdi-communication-phone"></i>Phone</div>
+          <div class="collapsible-body"><p><%= business.phone %></p></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="mdi-av-web"></i>Website</div>
+          <div class="collapsible-body">
+            <% if current_user && business.user_id == current_user.id %>
+              <p><%= link_to 'Create page', new_business_design_path(:business_id => business.id) %></p>
+            <% elsif !current_user %>
+              <p><%= link_to business.name, business.website %></p>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <% end %>
 </div>
 </main>
