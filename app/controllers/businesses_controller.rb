@@ -27,11 +27,29 @@ class BusinessesController < ApplicationController
     @business = Business.find(params[:id])
   end
 
+  def edit
+    @business = Business.find(params[:id])
+  end
+
+  def update
+    @business = Business.find(params[:id])
+    if @business.update_attributes(business_params)
+      redirect_to business_path(@business)
+    else
+      render :edit
+    end
+
+  end
+
   def format_id(string)
     string.match(/\d/)
   end
 
   def claim_business
+    @business = Business.find(params[:id])
+  end
+
+  def business_claimed
     user_id = format_id("#{params[:user_id]}")
     name = params[:name]
     email = params[:email]
@@ -42,7 +60,7 @@ class BusinessesController < ApplicationController
 
     OwnerMailer.claim_business_email(user_id, name, email, business_name, business_address, business_phone, comments).deliver
     flash[:notice] = "Business claim request has been sent."
-    redirect_to '/'
+    redirect_to business_path
   end
 
   protected

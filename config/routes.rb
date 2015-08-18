@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :businesses, only: [:index, :new, :create, :update, :edit, :destroy, :show] do
     resource :design, only: [:new, :create, :update, :show]
+    member do 
+      get 'claim_business'
+      post 'business_claimed'
+    end
   end
 
   namespace :admin do
@@ -19,7 +23,8 @@ Rails.application.routes.draw do
   get 'home', to: 'welcome#index', as: :home
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register
-  match '/claim_business', to: 'businesses#claim_business', via: 'post'
+  #match '/businesses/claim_business', to: 'businesses#claim_business', via: 'get'
+  #match '/business_claimed', to: 'businesses#business_claimed', via: 'post'
   # match 'businesses/:id/', to: 'design#show', via: 'get'
 
   root 'welcome#index'

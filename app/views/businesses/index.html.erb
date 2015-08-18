@@ -38,9 +38,9 @@
         <li>
           <div class="collapsible-header"><i class="mdi-av-web"></i>Website</div>
           <div class="collapsible-body">
-            <% if current_user.id == business.user_id %>
+            <% if current_user && business.user_id == current_user.id %>
               <p><%= link_to 'Create page', new_business_design_path(:business_id => business.id) %></p>
-            <% else %>
+            <% elsif !current_user %>
               <p><%= link_to business.name, business.website %></p>
             <% end %>
           </div>
