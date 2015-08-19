@@ -24,7 +24,7 @@ var ready;
 ready = function() {
   $('.materialboxed').materialbox();
   $('.parallax').parallax();
-
+  $("video").prop('muted', true);
 }
 $(document).ready(ready);
 $(document).on('page:load', ready);
