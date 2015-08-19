@@ -82,14 +82,19 @@ $(function () {
     $(this).removeClass('clicked-item ')
   });
 
+// alert on submit 
+  $('#classBtn').click(function() {
+    alert("IT WAS SUBMITTED!")
+    $(this).submit();
+  });
+
 // creates an object called select. Use this to pass colour selection to controller
   var selection = {
 
   };
 
 // pairs the section class to the colour picked. stores them in the selection object
-  $('.item').on('click', function(e)
-  {
+  $('.item').on('click', function(e) {
       var x = $(this).css('backgroundColor');
       var hexColor = hexc(x);
       var target = $(this).parent().data('color');
@@ -97,8 +102,7 @@ $(function () {
   })
 
 // on click of the save button the selected colours are sent to the rails controller.
-  $('button#save').on('click', function()
-  {
+  $('button#save').on('click', function() {
     var fullData = {"_method": "PUT", design: selection}
     $.ajax ({
       type: "POST",
@@ -121,12 +125,3 @@ $(function () {
   };
 
 });
-
-$(window).load(function() {
-  $('.searchBar form').reset();
-});
-
-
-
-
-
