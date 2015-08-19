@@ -25,9 +25,9 @@ class Admin::BusinessesController < ApplicationController
     
     @user = User.find(assign_business_params[:user_id])
     #binding.pry
-    if @user.user_type == "owner"
-      #binding.pry
-      #@business.user_id = @user.id
+    if @user
+      @user.user_type = "owner"
+      binding.pry
       @business.user_id = assign_business_params[:user_id]
       @business.save
       redirect_to admin_businesses_path
