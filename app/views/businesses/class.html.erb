@@ -1,8 +1,31 @@
+<script type="text/javascript">
+$(function(){
+  $('.slide-out-div').tabSlideOut({
+    tabLocation: 'left',                      //side of screen where tab lives, top, right, bottom, or left
+    speed: 300,                               //speed of animation
+    action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+    topPos: '0px',                          //position from the top/ use if tabLocation is left or right
+    leftPos: '0px',                          //position from left/ use if tabLocation is bottom or top
+    fixedPosition: false                      //options: true makes it stick(fixed position) on scroll
+  });
+
+});
+</script>
+<style type="text/css">
+
+.slide-out-div {
+    padding: 20px;
+    width: 250px;
+    background: #ccc;
+    border: 1px solid #29216d;
+}      
+</style>
+
 <main>
   <div class="container-content">
     <h3 class="center">Let's sign you up for a class</h3>
     <div class="container">
-      <%= form_tag(register_class_path) do %>
+      <%= form_tag(register_class_path, {:id => "sign-upClass"}) do %>
        <%= hidden_field :business_id, :value => params[:business] %> 
         <div class="form-group">
           <%= label_tag 'name', 'Name' %>
@@ -28,8 +51,24 @@
           <%= label_tag 'comments', 'Comments' %>
           <%= text_area_tag 'comments', nil, class: 'form-control', rows: 4, placeholder: 'Anything else we should know?' %>
          </div>
-         <%= submit_tag nil, class: 'btn btn-default btn-about pull-right' %>
+         <%= submit_tag nil, class: 'btn btn-default btn-about pull-right', id: 'classBtn' %>
       <% end %>
+    </div>
+  </div>
+  <div>
+    <div class="payments">
+    <%= form_tag charges_path do %>
+      <article>
+        <label class="amount">
+          <span>Amount: $5.00</span>
+        </label>
+      </article>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="500">
+      </script>
+    <% end %>
     </div>
   </div>
 </main>
