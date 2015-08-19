@@ -9,7 +9,7 @@
       </div>
       <div class="col sm12 m5 input-field">
           <%= form_tag(businesses_path, method: "get", :class => "nav-search")  do %> 
-            <%= text_field_tag :search, params[:search], class:"nav-search-text-field"%>
+            <%= text_field_tag :search, params[:search], placeholder: "Search", class:"nav-search-text-field"%>
 
           <% end %>
       <!-- <i class="mdi-action-search"></i> -->
