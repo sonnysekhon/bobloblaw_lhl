@@ -21,7 +21,16 @@
             <ul>
             <!-- Twitter and facebook save names differently -->
             <% if current_user.full_name == " " %>
-              <li class="avatar-name"><%= current_user.name %> </li>
+              <% if current_user && current_user.user_type == "superuser" %>
+                <li class="avatar-name dropdown-button" data-activates='dropdown1'>Admin : <%= current_user.name %> </li>
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><%= link_to 'Users', admin_users_path %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to 'Businesses', admin_businesses_path %></li> 
+                </ul>
+              <% else %>
+                <li class="avatar-name"><%= current_user.name %> </li>  
+              <% end %>
             <% else %>
               <li class="avatar-name"><%= current_user.full_name %>
             <% end %>
@@ -38,11 +47,6 @@
           <% end %>
         </div>
       </div>
-      <% if current_user && current_user.user_type == "superuser" %>
-        <div class=" right col s12 m2">
-          <%= link_to 'Admin', admin_users_path %>
-        </div>
-      <% end %>
     </div>
   </div>
 </nav>
