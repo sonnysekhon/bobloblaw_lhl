@@ -1,5 +1,5 @@
 <main>
-<%= form_for [:admin,@user] do |f| %>
+<%= form_for [:admin, @user] do |f| %>
   <% if @user.errors.any? %>
     <div>
       <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
@@ -12,27 +12,23 @@
   <% end %>
   <div>
     <%= f.label "email" %>
-    <%= f.text_field "email" %>
+    <%= f.text_field(:email) %>
   </div>
   <div>
     <%= f.label "firstname", "First Name" %><br>
-    <%= f.text_field "firstname" %>
+    <%= f.text_field(:first_name) %>
   </div>
   <div>
     <%= f.label "lastname", "Last Name" %><br>
-    <%= f.text_field "lastname" %>
+    <%= f.text_field(:last_name) %>
   </div>
-  <div>
-    <%= f.label "password" %><br>
-    <%= f.password_field "password" %>
-  </div> 
-  <div>
-    <%= f.label "password_confirmation" %><br>
-    <%= f.password_field "password_confirmation" %>
+   <div>
+    <%= f.label "name", "Full name" %><br>
+    <%= f.text_field(:name) %>
   </div>
   <div>
     <%= f.label "user_type", "User Type" %><br>
-    <%= f.select(:user_type,["customer", "owner", "superuser"], {}, {:class => 'browser-default'}) %><br>
+    <%= f.select(:user_type,["customer", "owner"], {}, {:class => 'browser-default'}) %><br>
   </div>
   <div><%= f.submit "Submit" %></div>
 <% end %>

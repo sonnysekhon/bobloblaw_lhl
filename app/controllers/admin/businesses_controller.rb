@@ -22,9 +22,13 @@ class Admin::BusinessesController < ApplicationController
 
   def update
     @business = Business.find(params[:id])
-    @user = User.find_by(assign_business_params)
-    if @user.user_type == "owner"
-      @business.user_id = @user.id
+    
+    @user = User.find(assign_business_params[:user_id])
+    #binding.pry
+    if @user
+      @user.user_type = "owner"
+      binding.pry
+      @business.user_id = assign_business_params[:user_id]
       @business.save
       redirect_to admin_businesses_path
     else
@@ -35,7 +39,7 @@ class Admin::BusinessesController < ApplicationController
   end
   protected
   def assign_business_params
-    params.require(:business).permit(:email)
+    params.require(:business).permit(:user_id)
   end
 
 
