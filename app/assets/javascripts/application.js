@@ -25,7 +25,11 @@ ready = function() {
   $('.materialboxed').materialbox();
   $('.parallax').parallax();
   $("video").prop('muted', true);
+  $('.dropdown-button').dropdown();
+  $('.collapsible').collapsible();  
+  // $("#video").play();
 }
+
 $(document).ready(ready);
 $(document).on('page:load', ready);
 

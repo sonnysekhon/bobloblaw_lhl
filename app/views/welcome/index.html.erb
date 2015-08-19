@@ -4,16 +4,23 @@
       <br><br>
       <h1 class="header center white-text">Almanak</h1>
       <div class="row center">
-        <h5 class="header col s12 light white-text">A minimalist directory</h5>
+        <h5 class="header col s12 light white-text">Your Local Directory</h5>
       </div>
       <div class="row center">
-        <a href="/businesses" id="download-button" class="btn-large waves-effect waves-light teal lighten-1  hoverable">Get Started</a>
+        <li class="dropdown-button btn btn-large waves-effect waves-light teal lighten-1 hoverable" data-activates='dropdown2'>Find Local Business</li>
+          <ul id='dropdown2' class='dropdown-content'>
+            <li><%= link_to 'Yoga Studios', businesses_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Coffee Shops', businesses_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Dev Bootcamps', businesses_path %></li>
+          </ul>
       </div>
       <br><br>
     </div>
   </div>
   <div class="parallax">
-     <video class="hero_video" class="video-container no-controls" preload="auto" loop="loop" autoplay>
+     <video class="hero_video" class="video-container no-controls" preload="auto" loop="loop" autoplay="autoplay">
         <source src="/assets/yoga_shitty_hd.webm">
      </video>
   </div>
@@ -58,7 +65,7 @@
       <br>
       <br>
       <br>
-        <h5 class="header col s12 light white-text text-fp">Simplicity is everything</h5>
+        <h4 class="header col s12 light white-text text-fp flow-text">Simplicity Is Everything</h4>
       </div>
     </div>
   </div>
@@ -88,7 +95,7 @@
       <br>
       <br>
       <br>
-        <h5 class="header col s12 light white-text text-fp">Find what you're looking for</h5>
+        <h4 class="header col s12 light white-text text-fp flow-text">Find What You're Looking For</h4>
       </div>
     </div>
   </div>
