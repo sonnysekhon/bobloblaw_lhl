@@ -2,37 +2,13 @@
 
 @import url(http://fonts.googleapis.com/css?family=Nunito);
 
-.nav-wrapper {
-    position: absolute;
-}
 
-.navbar-fixed {
-  
-}
 
 body, html
 {
     background-color: #EDEDED !important;
 }
-.almanak-logo {
 
-}
-.avatar-name {
-  margin-right: 15px;
-}
-
-
-.searchBar {
-  background-color: #a8dbd6;
-  margin-top: 9px;
-  height: 45px;
-  border-radius: 20px;
-}
-
-#search {
-  font-size: 40px;
-  margin-top: 2px;
-}
 body {
     display: flex;
     min-height: 100vh;
@@ -43,6 +19,39 @@ main {
     flex: 1 0 auto;
 }
 
+.nav-wrapper {
+    position: absolute;
+}
+
+
+.almanak-logo {
+ height: 32px;
+}
+.avatar-name {
+  margin-right: 15px;
+}
+.nav-search{
+  margin: 12px auto;
+  height: 40px;
+  background: #80cbc4;
+  border: 2px solid #80cbc4;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 350px;
+}
+.nav-search-text-field{
+  color: #ffffff; 
+
+}
+nav .input-field input {
+  height: 54%;
+  position: absolute;
+}
+
+.hero_video {
+  width: 100%
+}
+
 footer
 {
     position:relative;
@@ -50,12 +59,26 @@ footer
     width:100%;
 }
 
+footer.page-footer {
+    margin-top: 0px;
+}
+
+.text-fp{
+  text-shadow: 5px 5px 10px black;
+}
+
 .tw-fb-logo {
-  margin-top: 12px;
+  margin-top: 15px;
+  line-height:32px;
 }
 
 .tw-fb-logo:hover {
+    background: #26a69a;
     opacity: 0.5;
+}
+
+.logo-hover{
+  margin-left: 50px;
 }
 
 
