@@ -1,4 +1,5 @@
 <main>
+<br>
 <%= form_for @business, :html => {:multipart => true} do |f| %>
   <% if @business.errors.any? %>
     <div>
@@ -12,6 +13,7 @@
   <% end %>
   <div class="container-content">
     <div class="container">
+      <br>
       <div>
         <%= f.label "category" %>
         <%= f.text_field "category" %>
@@ -30,7 +32,7 @@
       </div>
       <div>
         <%= f.label "description" %>
-        <%= f.text_area "description" %>
+        <%= f.text_field "description" %>
       </div>
       <div>
         <%= f.label "website" %>
@@ -57,9 +59,11 @@
         <%= f.text_field "country" %>
       </div>
       <div><%= f.file_field :photo %></div>
+      <br>
       <div>
-        <%= f.submit "Submit" %>
+        <%= f.submit "Submit", :class => "download-button btn waves-effect waves-light teal lighten-1 hoverable"  %>
       </div>
+      <br>
     </div>
   </div>
 <% end %>

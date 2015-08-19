@@ -27,7 +27,7 @@ class Admin::BusinessesController < ApplicationController
     #binding.pry
     if @user
       @user.user_type = "owner"
-      binding.pry
+      # binding.pry
       @business.user_id = assign_business_params[:user_id]
       @business.save
       redirect_to admin_businesses_path

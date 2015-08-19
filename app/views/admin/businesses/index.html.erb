@@ -1,13 +1,26 @@
 <main>
 <div class="container">
-<h3>Admin Business Management Page</h3>
-
+<h3 class="flow-text">Admin Business Management Page</h3>
 <%= paginate @businesses %>
-<% @businesses.each do |business| %>
-  <div class = "business center-align ">
-  <%= business.name %> | <%= business.email %> | <%= link_to "Assign To Business" , edit_admin_business_path(business) %>
-  </div>
-<% end %>
 
+  <table class="hoverable bordered z-depth-1">
+    <thead>
+      <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Edit</th>
+      </tr>
+    </thead>
+    <% @businesses.each do |business| %>
+    <tbody>
+      <tr>
+        <td><%= business.name %></td>
+        <td><%= business.email %></td>
+        <td><%= link_to "Assign To Business" , edit_admin_business_path(business), :class => "download-button btn waves-effect waves-light teal lighten-1 hoverable" %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+  <br>
 </div>
 </main>
