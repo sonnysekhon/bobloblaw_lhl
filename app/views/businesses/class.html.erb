@@ -1,10 +1,10 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
 $(function() {
-  $('#classBtn').on('click', function(event) {
-    event.preventDefault();
+  // $('#classBtn').on('click', function(event) {
+  //   event.preventDefault();
+  // })
   $('.payments').show();
-  })
 
   var handler = StripeCheckout.configure({
   key: 'pk_test_hD5PFgoKwJUUZo6g5yWvZbkE',
@@ -14,11 +14,14 @@ $(function() {
   }
   });
 
-  $('#classBtn').on('click', function() {
+  $(document).on('click', '#classBtn',function(e) {
+    e.preventDefault()
+    console.log('click')
     // Open Checkout with further options
+
     handler.open({
       name: '<%= Business.find(params[:business]).name %>',
-      currency: "usd",
+      currency: "cad",
       amount: 500,
       closed: function(){ $('#sign-upClass').submit() }
     });
@@ -28,8 +31,6 @@ $(function() {
   $(window).on('popstate', function() {
     handler.close();
   });
-
-
 })
 
 </script>

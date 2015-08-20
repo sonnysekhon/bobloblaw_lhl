@@ -21,8 +21,8 @@ Rails.application.routes.draw do
     resources :businesses
   end
   
-  get 'class_register', to: 'businesses#class', as: :signup
-  match '/register_class', to: 'businesses#register_class', via: 'post'
+  get '/class_register', to: 'businesses#class', as: :signup
+  match '/register_class', to: 'businesses#register_class', via: 'POST'
   get 'home', to: 'welcome#index', as: :home
   get 'login', to: 'session#new', as: :login
   get 'register', to: 'users#new', as: :register

@@ -28,7 +28,7 @@ ready = function() {
   $('.dropdown-button').dropdown();
   $('.collapsible').collapsible();  
   // $("#video").play();
-  $("video")[0].play();
+  // $("video")[0].play();
 
 }
 
