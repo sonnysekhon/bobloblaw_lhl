@@ -88,12 +88,6 @@ $(function () {
     $(this).removeClass('clicked-item ')
   });
 
-// alert on submit 
-  $('#classBtn').click(function() {
-    alert("IT WAS SUBMITTED!")
-    $(this).submit();
-  });
-
 // creates an object called select. Use this to pass colour selection to controller
   var selection = {
 

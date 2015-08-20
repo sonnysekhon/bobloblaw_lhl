@@ -76,7 +76,7 @@ class BusinessesController < ApplicationController
     
     ClassMailer.class_signup_email(name, phone_number, email, class_name, class_date, comments, @business).deliver
     flash[:notice] = "Class signup has been sent to the business."
-    redirect_to(:back)
+    redirect_to business_path(@business.id)
   end
 
   protected
