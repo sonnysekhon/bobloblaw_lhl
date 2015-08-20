@@ -1,22 +1,24 @@
 <main>
-<div class="container about">
-  <br>
-  <h5 class="flow-text">Yoga Studios</h5>
-  <h6>British Columbia</h6>
-  <hr>
-  <% @businesses.each do |business| %>
-    <div class="card-business hoverable">
-      <div class="card-header-business">
-        <% if business.photo_scraped %>
-          <img src=<%= business.photo_scraped %>>
-        <% else %>
-          <%= image_tag('default.png') %>
-        <% end %>
+  <div class="container about">
+    <br>
+    <h5 class="flow-text">Yoga Studios</h5>
+    <h6>British Columbia</h6>
+    <hr>
+    <% @businesses.each do |business| %>
+      <div class="container">
+        <div class="card-business hoverable">
+          <div class="card-header-business">
+            <% if business.photo_scraped %>
+              <img src=<%= business.photo_scraped %>>
+            <% else %>
+              <%= image_tag('default.png') %>
+            <% end %>
+          </div>
+          <div class="card-content-business">
+            <h3 class="flow-text center-align"><%=link_to business.name, business_path(business), :class => "teal-text text-lighten-1"%></h3>
+          </div>
+        </div>
       </div>
-      <div class="card-content-business">
-        <h3 class="flow-text center-align"><%=link_to business.name, business_path(business), :class => "teal-text text-lighten-1"%></h3>
-    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </main>
