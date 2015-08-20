@@ -70,15 +70,11 @@ nav ::-webkit-input-placeholder {
 .hero_video {
   width: 100%;
   z-index: 49;
+  -webkit-filter: brightness(75%);
 }
 
-#overlay {
-    top:0;
-    left:0;
-    width:100%;
-    opacity:0.5;
-    background-color: black;
-    z-index:50;
+.parallax img {
+  -webkit-filter: brightness(75%);
 }
 
 footer
