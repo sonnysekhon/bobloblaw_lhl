@@ -20,6 +20,10 @@
 //   $('.materialboxed').materialbox();
 //   $('.parallax').parallax();
 // });
+
+
+
+
 var ready;
 ready = function() {
   $('.materialboxed').materialbox();
