@@ -36,7 +36,8 @@ $(function() {
 </script>
 <main>
   <div class="container-content">
-    <h3 class="center">Let's sign you up for a class</h3>
+  <br>
+    <h3 class="center flow-text">Let's Sign You Up For A Class</h3>
     <div class="container">
       <%= form_tag(register_class_path, {:id => "sign-upClass"}) do %>
        <%= hidden_field :business_id, :value => params[:business] %> 
@@ -62,9 +63,11 @@ $(function() {
         </div>
         <div class="form-group">
           <%= label_tag 'comments', 'Comments' %>
-          <%= text_area_tag 'comments', nil, class: 'form-control', rows: 4, placeholder: 'Anything else we should know?' %>
+          <%= text_field_tag 'comments', nil, class: 'form-control', rows: 4, placeholder: 'Anything else we should know?' %>
          </div>
+         <br>
          <button class='btn btn-default btn-about pull-right' id='classBtn'>Submit</button>
+         <br>
       <% end %>
     </div>
   </div>
