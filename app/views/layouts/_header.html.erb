@@ -9,7 +9,7 @@
       </div>
       <div class="col sm12 m5 input-field">
           <%= form_tag(businesses_path, method: "get", :class => "nav-search")  do %> 
-            <%= text_field_tag :search, params[:search], placeholder: "Search", class:"nav-search-text-field"%>
+            <%= text_field_tag :search, nil , placeholder: "Search", class:"nav-search-text-field"%>
 
           <% end %>
       <!-- <i class="mdi-action-search"></i> -->
@@ -27,6 +27,13 @@
                   <li><%= link_to 'Users', admin_users_path %></li>
                   <li class="divider"></li>
                   <li><%= link_to 'Businesses', admin_businesses_path %></li> 
+                </ul>
+              <% elsif current_user && current_user.user_type == "owner"%>
+                <li class="avatar-name dropdown-button" data-activates='dropdown3'>Owner : <%= current_user.name %> </li>
+                <ul id='dropdown3' class='dropdown-content'>
+                  <li><%= link_to 'Customers', businesses_path %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to 'Edit Page', businesses_path %></li> 
                 </ul>
               <% else %>
                 <li class="avatar-name"><%= current_user.name %> </li>  

@@ -58,7 +58,7 @@ nav ::-webkit-input-placeholder {
    opacity: 0.7;
 }
 
-#dropdown1 {
+#dropdown1, #dropdown3 {
   margin-top: 64px;
 }
 
@@ -68,7 +68,17 @@ nav ::-webkit-input-placeholder {
 }
 
 .hero_video {
-  width: 100%
+  width: 100%;
+  z-index: 49;
+}
+
+#overlay {
+    top:0;
+    left:0;
+    width:100%;
+    opacity:0.5;
+    background-color: black;
+    z-index:50;
 }
 
 footer
