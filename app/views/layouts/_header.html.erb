@@ -39,7 +39,23 @@
                 <li class="avatar-name"><%= current_user.name %> </li>  
               <% end %>
             <% else %>
-              <li class="avatar-name"><%= current_user.full_name %>
+              <% if current_user && current_user.user_type == "superuser" %>
+                <li class="avatar-name dropdown-button" data-activates='dropdown1'>Admin : <%= current_user.full_name %> </li>
+                <ul id='dropdown1' class='dropdown-content'>
+                  <li><%= link_to 'Users', admin_users_path %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to 'Businesses', admin_businesses_path %></li> 
+                </ul>
+              <% elsif current_user && current_user.user_type == "owner"%>
+                <li class="avatar-name dropdown-button" data-activates='dropdown3'>Owner : <%= current_user.name %> </li>
+                <ul id='dropdown3' class='dropdown-content'>
+                  <li><%= link_to 'Customers', businesses_path %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to 'Edit Page', businesses_path %></li> 
+                </ul>
+              <% else %>
+                <li class="avatar-name"><%= current_user.name %> </li>  
+              <% end %>
             <% end %>
               <li class="avatar_thumbnail"><%= image_tag current_user.photo, alt: current_user.name %></li>
               <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
